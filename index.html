@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="scripts/index.js" defer></script>
     <link rel="stylesheet" type="text/css" href="./styles/reset.css" />
     <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
     <link
@@ -87,12 +86,7 @@
           <form>
             <div id="titulo">
               <label for="titulo">Titulo: </label>
-              <input
-                id="iTitulo"
-                ype="text"
-                name="titulo"
-                placeholder="Titulo"
-              />
+              <input id="iTitulo" ype="text" name="titulo" placeholder="Titulo"/>
             </div>
 
             <div id="descripcion">
@@ -101,32 +95,22 @@
             </div>
 
             <div id="uri">
-              <label for="url">uri: </label>
+              <label for="url">url: </label>
               <input id="iUri" type="url" name="url" />
             </div>
 
             <div id="boton">
-              <button type="button" id="iboton" onclick="obtenerDatos()">
-                Enviar
-              </button>
+              <button type="button" id="iboton" onclick="obtenerDatos()">Enviar</button>
             </div>
             <br />
             <br />
           </form>
 
-          <div>
-            <label for="titulo"></label>
-          </div>
-          <div>
-            <label for="descripcion"></label>
-          </div>
-          <div>
-            <label for="url"></label>
-          </div>
         </article>
       </section>
     </main>
 
     <footer></footer>
+    <script src="scripts/index.js"></script>
   </body>
 </html>

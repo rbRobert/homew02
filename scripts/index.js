@@ -28,40 +28,72 @@ class Repository {
   // Eliminar
   deleteActivity(idBuscado) {
     console.log(idBuscado);
-    let elementoEliminado = false;
-    this.getAllActivities().forEach((elemento, indice) => {
-      if (elemento.id === idBuscado) {
-        console.log("elemento id: " + elemento.id + " - indice: " + indice);
-        this.getAllActivities().splice(indice, 1);
-        elementoEliminado = true; 
-      }
-    });
-
-    if (elementoEliminado){
-        console.log("Elemento eliminado correctamente");
-    } else {
-        console.log("No se encontró ningún elemento con el ID especificado.");
-    }
-  }
+    this.activities = this.activities.filter((elemento) => elemento.id !== idBuscado);
+  } 
 
 }
 
-const repository01 = new Repository();
-repository01.createActivity("noticias", "primero", "http://www.ere.com/img01");
-console.log(repository01);
-console.log(repository01.getAllActivities());
+const repository = new Repository();
 
-const repository02 = new Repository();
-repository01.createActivity("deportes", "segundo", "http://www.ere.com/img02");
-console.log(repository01);
-console.log(repository01.getAllActivities());
+var titulo = document.getElementById('iTitulo');
 
-const repository03 = new Repository();
-repository01.createActivity("politica", "tercero", "http://www.ere.com/img03");
-console.log(repository01);
-console.log(repository01.getAllActivities()); 
+var descripcion = document.getElementById('txtArea');
 
-repository01.deleteActivity(2);
-console.log("Elementos actualizados..!!");
-console.log(repository01.getAllActivities());
+var imgUrl = document.getElementById('iUri');
 
+var boton = document.getElementById("iboton");
+
+// repository.createActivity("noticias", "primero", "http://www.ere.com/img01");
+// console.log(repository);
+// console.log(repository.getAllActivities()); 
+
+
+// Función para convertir una instancia de Activity en un elemento HTML
+function activityToHTML(activity) {
+  const {id, title, descripcion, imgUrl} = activity;
+  const card = document.createElement("div");
+  card.className = "card";
+  card.id = id;
+
+  const h3 = document.createElement("h3");
+  h3.innerText = title;
+
+  const p = document.createElement("p");
+  p.innerText = descripcion;
+
+  const img = document.createElement("img");
+  img.src = imgUrl;
+
+  const deleteBoton = 
+
+
+}
+
+// Ejemplo de uso
+const myActivity = new Activity('Ejercicio', 'Correr en el parque');
+const activityHTML = activityToHTML(myActivity);
+
+// Agregar el elemento HTML al cuerpo del documento
+document.body.appendChild(activityHTML);
+
+
+
+
+
+/* // seleccionar el input de titulo 
+var titulo = document.getElementById('iTitulo');
+// seleccionar el input de descripcion 
+var descripcion = document.getElementById('txtArea');
+// seleccionar el input de url de imagen  
+var imgUrl = document.getElementById('iUri');
+// seleccionar el boton
+var boton = document.getElementById("iboton");
+
+// seleccionar el contenedor de tarjetas
+// handler
+// tomar los valores de los inputs
+// validar que los inputs tengan informacion si no return alert que falta ingresar algo
+// repository.createActivity(title, descripcion, imgurl)
+
+// convertir todos los objetos activity a tarjetas de html
+// appender todas las tarjetas al contenedor de tarjetas  */
